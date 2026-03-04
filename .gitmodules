@@ -1,0 +1,3 @@
+[submodule "baleia_tools"]
+	path = baleia_tools
+	url = https://github.com/YKul/baleia_tools.git
