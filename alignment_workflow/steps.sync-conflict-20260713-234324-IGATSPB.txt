@@ -7,7 +7,7 @@ TrimNonHomologousFragments
 https://hal.science/hal-03099847v1/file/Ranwez-MethMolBiol-HAL.pdf
 1) Determine if dataset is too large to use MACSE alone
 	Generate a gridsearch chart using synthetic data to show this
-If short (check the command line arguments in the job file for these):
+If short:
 MACSE
 HMMCleaner
 reportMaskAA2NT

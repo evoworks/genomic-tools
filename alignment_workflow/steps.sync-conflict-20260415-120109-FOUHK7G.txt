@@ -1,0 +1,35 @@
+removeStopCodons()
+	Needs to alert for cases 2 and 3
+
+TrimNonHomologousFragments
+
+*Align
+https://hal.science/hal-03099847v1/file/Ranwez-MethMolBiol-HAL.pdf
+1) Determine if dataset is too large to use MACSE alone
+	Generate a gridsearch chart using synthetic data to show this
+If short:
+MACSE
+HMMCleaner
+reportMaskAA2NT
+exportAlignment
+TAPER
+
+If long (hundreds of sequences):
+The key is to use alignSequences with options that enable MACSE to quite rapidly generate a draft
+alignment of the coding nucleotide sequences in which potential frameshifts are identified.
+The resulting amino acids sequences are then aligned using MAFFT, which is much faster
+than MACSE for aligning fixed amino acid sequences. The drawback of this approach is that
+some frameshifts may not be as accurately positioned within sequences as they would be with
+the MACSE_ALFIX pipeline, which may lead HMMCleaner to remove some extra residues.
+
+
+*thousands of sequences
+
+*We need to post-filter at the amino acid level
+HMMCleaner/BMGE/timAI
+	HMMCleaner removes low similarity segments from MSA
+	https://metacpan.org/dist/Bio-MUST-Apps-HmmCleaner/view/bin/HmmCleaner.pl
+*report AA masking/filtering at nucleotide level
+reportMaskAA2NT
+
+https://pmc.ncbi.nlm.nih.gov/articles/PMC6188553/
